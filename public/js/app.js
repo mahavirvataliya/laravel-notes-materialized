@@ -1912,6 +1912,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['note'],
@@ -2054,6 +2055,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['note'],
@@ -2113,7 +2116,6 @@ window._ = __webpack_require__(37);
 window.$ = window.jQuery = __webpack_require__(35);
 
 __webpack_require__(34);
-
 /**
  * Vue is a modern JavaScript library for building interactive web interfaces
  * using reactive data binding and reusable components. Vue's API is clean
@@ -37125,7 +37127,7 @@ var Component = __webpack_require__(2)(
   /* cssModules */
   null
 )
-Component.options.__file = "/home/mahavir/sharenote/laravel-notes/resources/assets/js/components/EditNote.vue"
+Component.options.__file = "/home/mahavir/sharenote/Materialized/laravel-notes/resources/assets/js/components/EditNote.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] EditNote.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -37159,7 +37161,7 @@ var Component = __webpack_require__(2)(
   /* cssModules */
   null
 )
-Component.options.__file = "/home/mahavir/sharenote/laravel-notes/resources/assets/js/components/ShareNote.vue"
+Component.options.__file = "/home/mahavir/sharenote/Materialized/laravel-notes/resources/assets/js/components/ShareNote.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] ShareNote.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -37193,7 +37195,7 @@ var Component = __webpack_require__(2)(
   /* cssModules */
   null
 )
-Component.options.__file = "/home/mahavir/sharenote/laravel-notes/resources/assets/js/components/ViewNote.vue"
+Component.options.__file = "/home/mahavir/sharenote/Materialized/laravel-notes/resources/assets/js/components/ViewNote.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] ViewNote.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -37219,20 +37221,22 @@ module.exports = Component.exports
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "panel-body"
+    staticClass: "collection-item"
   }, [_c('div', {
-    staticClass: "card"
+    staticClass: "row"
   }, [_c('div', {
-    staticClass: "card-body"
-  }, [_c('h4', {
+    staticClass: "col s12 m12"
+  }, [_c('div', {
+    staticClass: "card blue darken-1"
+  }, [_c('div', {
+    staticClass: "card-content white-text"
+  }, [_c('span', {
     staticClass: "card-title"
-  }, [_vm._v(_vm._s(_vm.title))]), _vm._v(" "), _c('p', {
-    staticClass: "card-text "
-  }, [_c('xmp', {
+  }, [_vm._v(_vm._s(_vm.title))]), _vm._v(" "), _c('p', [_c('xmp', {
     staticStyle: {
       "white-space": "pre-wrap"
     }
-  }, [_vm._v(_vm._s(_vm.body))])], 1)])])])
+  }, [_vm._v(_vm._s(_vm.body))])], 1)])])])])])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
@@ -37277,13 +37281,9 @@ if (false) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "panel panel-default"
+    staticClass: "collection-item"
   }, [_c('div', {
-    staticClass: "panel-heading"
-  }, [_vm._v("Edit note")]), _vm._v(" "), _c('div', {
-    staticClass: "panel-body"
-  }, [_c('div', {
-    staticClass: "form-group"
+    staticClass: "input-field col s12"
   }, [_c('input', {
     directives: [{
       name: "model",
@@ -37291,7 +37291,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       value: (_vm.title),
       expression: "title"
     }],
-    staticClass: "form-control",
     attrs: {
       "type": "text"
     },
@@ -37305,8 +37304,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.title = $event.target.value
       }
     }
-  })]), _vm._v(" "), _c('div', {
-    staticClass: "form-group"
+  }), _vm._v(" "), _c('label', {
+    attrs: {
+      "for": "title"
+    }
+  }, [_vm._v("Give your note a Title")])]), _vm._v(" "), _c('div', {
+    staticClass: "input-field col s12"
   }, [_c('textarea', {
     directives: [{
       name: "model",
@@ -37314,10 +37317,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       value: (_vm.body),
       expression: "body"
     }],
-    staticClass: "form-control",
-    attrs: {
-      "rows": "15"
-    },
+    staticClass: "materialize-textarea",
     domProps: {
       "value": (_vm.body)
     },
@@ -37328,15 +37328,22 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.body = $event.target.value
       }
     }
-  })]), _vm._v(" "), _c('button', {
-    staticClass: "btn btn-primary pull-right",
+  }), _vm._v(" "), _c('label', {
+    attrs: {
+      "for": "body"
+    }
+  }, [_vm._v("...and here goes your Note Body")])]), _vm._v(" "), _c('button', {
+    staticClass: "waves-effect waves-teal green btn pull-right",
     on: {
       "click": _vm.updateNote
     }
-  }, [_vm._v("Save")]), _vm._v(" "), _c('p', [_vm._v("\n            Users editing this note:  "), _c('span', {
-    staticClass: "badge"
-  }, [_vm._v(_vm._s(_vm.usersEditing.length))]), _vm._v(" "), _c('span', {
-    staticClass: "label label-success",
+  }, [_c('i', {
+    staticClass: "large material-icons right"
+  }, [_vm._v("save")]), _vm._v(" save")]), _vm._v(" "), _c('div', [_c('p', [_vm._v("\n        Users editing this note:"), _c('span', [_vm._v(_vm._s(_vm.usersEditing.length))]), _vm._v(" "), _c('span', {
+    staticClass: "waves-effect waves-light green black-text",
+    staticStyle: {
+      "padding": "5px"
+    },
     domProps: {
       "textContent": _vm._s(_vm.status)
     }

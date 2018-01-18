@@ -36,6 +36,7 @@ class NotesController extends Controller
         }
         $tags = Tag::all();
         return view('notes.index', compact('notes','snpms','snotes','tags'));
+        // return view('welcome');
     }
 
     public function create()

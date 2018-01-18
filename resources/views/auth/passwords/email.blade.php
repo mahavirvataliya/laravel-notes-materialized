@@ -3,10 +3,10 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Reset Password</div>
-                <div class="panel-body">
+        <div class="col s10 offset-s1">
+            <div class="collection">
+                <div class="collection-item">Reset Password</div>
+                <div class="collection-item">
                     @if (session('status'))
                         <div class="alert alert-success">
                             {{ session('status') }}
@@ -32,7 +32,7 @@
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn red">
                                     Send Password Reset Link
                                 </button>
                             </div>

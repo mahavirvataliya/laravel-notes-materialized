@@ -3,51 +3,42 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-            	<div class="panel panel-default">
-            		<a class="pull-right btn btn-danger" href="{{ url('/') }}"><i class="fa fa-times-circle" aria-hidden="true"></i></a>
-                <div class="panel-heading">View Note</div>
+            <div class="col s10 offset-s1">
+            	<div class="collection">
+            		<a class="pull-right btn btn-small waves-effect waves-light red " href="{{ url('/') }}"><i class="material-icons">close</i></a>
+                <div class="collection-item">View Note</div>
                 <view-note :note="{{ $note }}"></view-note>
-                <div class="panel-body">
+                <div class="collection-item">
                   @if (!empty($tagnames))
                     {{-- expr --}}
                     @foreach ($tagnames as $tag)
                       <a href="{{ url('tagview', [$tag->id]) }}">
-                      <b> 
-                       <code class="text-primary bg-info" >{{ $tag->tagname }}</code>
-                     </b>
+                       <code style="padding:2px" class="blue lighten-3 blue-text text-darken-4" >{{ $tag->tagname }}</code>&nbsp;
                     </a>
                     @endforeach
                   @endif
                 </div>
                 </div>
-                <div class="panel panel-default">
-                <div class="panel-heading">Information of Note Id and Note Creater</div>
-                 <div class="panel-body">
-                    <div class="alert alert-primary alert-dismissable show">
-                    <button type="button" class="close" data-dismiss="alert">&times;</button>
-                    <strong style="white-space: pre-wrap">Note Id is : {{ $note->id }}</strong>
-                  </div>
-                  <div class="alert alert-primary alert-dismissable show">
-                    <button type="button" class="close" data-dismiss="alert">&times;</button>
-                    <strong style="white-space: pre-wrap">Created By <b class="text-uppercase text-primary">{{ $username[0] }}</b> with Email ID <u class="text-primary">{{ $username[1] }}</u></strong> 
-                </div>
+                <div class="collection">
+                <div class="collection-item">Information of Note Id and Note Creater</div>
+                 <div class="collection-item">
+                    <p style="white-space: pre-wrap">Note Id is : {{ $note->id }}</p>
+                    <p style="white-space: pre-wrap">Created By <b class="blue-text text-darken-4">{{ $username[0] }}</b> with Email ID <u class="blue-text text-darken-4">{{ $username[1] }}</u></p> 
+              
               </div>
           </div>
-            <div class="panel panel-default">
-            <div class="panel-heading">Note is Shared With</div>
-                  <div class="panel-body">
-                    <ul class="list-group">
+            <div class="collection">
+            <div class="collection-item">Note is Shared With</div>
+                  <div class="collection-item">
                      @foreach ($snpms as $snpm)
-                     <li class="list-group-item ">
+                     <p>
                          {{ $snpm->suser_email }}
-                     </li>
+                     </p>
                      @endforeach 
-                    </ul>
                     </div>
             </div>
             </div>
-            
         </div>
+        <a href="{{ url('create') }}" style="position: fixed;bottom: 30px;right: 30px;" class="btn-floating tooltipped btn-large waves-effect waves-light red" data-position="top" data-delay="50" data-tooltip="Create Note"><i class="material-icons">add</i></a>
     </div>
 @endsection

@@ -13,17 +13,19 @@
 </template>
 -->
 <template>
-    
-        <div class="panel-body">
-            <div class="card">
-                <div class="card-body">
-                    <h4 class="card-title">{{ title }}</h4>
-                    <p class="card-text "><xmp style="white-space: pre-wrap">{{ body }}</xmp>
-                    </p>
-                </div>
+<div class="collection-item">
+    <div class="row">
+        <div class="col s12 m12">
+          <div class="card blue darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">{{ title }}</span>
+              <p><xmp style="white-space: pre-wrap">{{ body }}</xmp></p>
             </div>
+           
+          </div>
         </div>
-    
+      </div>
+     </div>
 </template>
 <script>
     export default {

@@ -1,24 +1,27 @@
 @extends('layouts.app')
-
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-            	<div class="panel panel-default">
-       			 <div class="panel-heading">Share Note</div>
-       			     <div class="panel-body">
-			           		<form action="{{ url('shares') }}" method="POST" class="form" role="form">
+            <div class="col s10 offset-s1">
+            	<div class="collection"><a class="pull-right btn btn-small waves-effect waves-light red " href="{{ url('/') }}"><i class="material-icons">close</i></a>
+       			 <div class="collection-item">Share Note</div>
+       			     <div class="collection-item">
+                         <div class="row">
+			           		<form class="col s12" action="{{ url('shares') }}" method="POST" role="form">
+                             <div class="row">
                             {{ csrf_field() }}
-                            <div class="form-group{{ $errors->has('suser_email') ? ' has-error' : '' }}">
-                            <label for="suser_email" class="col-md-4 control-label">E-Mail Address</label>
-                            <div class="col-md-8">
-                                <input id="suser_email" type="email" list="users" class="form-control" name="suser_email" value="{{ old('suser_email') }}" required>
-                                @if ($errors->has('suser_email'))
+
+                            <div class="input-field col s12 {{ $errors->has('suser_email') ? ' has-error' : '' }}">
+                              <input id="suser_email" list="users" name="suser_email" value="{{ old('suser_email') }}" required type="email" class="validate">
+                              <label for="suser_email" data-error="wrong" data-success="right">E-Mail Address to Share</label>
+
+                              @if ($errors->has('suser_email'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('suser_email') }}</strong>
                                     </span>
                                 @endif
                             </div>
+
                             <input type="hidden" name="note_id" value="{{ $note->id }}">
                           
                             <datalist id="users">
@@ -26,29 +29,34 @@
                             	<option value="{{ $user->email }}"></option>
                             	@endforeach
                             </datalist>
-                        </div>
+                        
                         <br>
-                        <div class="form-group">
-                        	<label for="noteaccess" class="col-md-12 control-label"><br>Access to Note For User Leave For Read-Only</label>
-                            <div class="radio">
-							  <label><input type="radio" {{ $per[0] }} value="owner" name="noteaccess">Owner</label>
-							</div>
-							<div class="radio">
-							  <label><input type="radio" {{ $per[1] }} value="edit_only" name="noteaccess">Edit And Delete Only</label>
-							</div>
-							<div class="radio">
-							  <label><input type="radio" {{ $per[2] }} value="share_only" name="noteaccess">Share Only</label>
-							</div>
-						
+                        <div class="col s12">
+                            <p>Access to Note For User Leave For Read-Only</p>
+                            <p>
+                              <input class="with-gap" {{ $per[0] }} type="radio" id="Owner" name="noteaccess" value="owner"  />
+                              <label for="Owner">Owner</label>
+                            </p>
+                            <p>
+                              <input class="with-gap" {{ $per[1] }} type="radio" id="edo" name="noteaccess" value="edit_only"  />
+                              <label for="edo">Edit And Delete Only</label>
+                            </p>
+                            <p>
+                              <input class="with-gap" {{ $per[2] }} type="radio" id="sro" name="noteaccess" value="share_only"  />
+                              <label for="sro">Share Only</label>
+                            </p>
+                            
 						</div>
-                            <button class="btn btn-primary pull-right" {{ $per[2] }}>Share</button>&nbsp;
-                            <a class="btn btn-danger" href="{{ url('') }}">Cancel</a>
+                            <button class="btn red pull-right" {{ $per[2] }}><i class="material-icons right">share</i>Share</button>&nbsp;
+                            
+                        </div>
                         </form>
-
+                    </div>
 			        </div>
                     
 			    </div>
             </div>
         </div>
+        <a href="{{ url('create') }}" style="position: fixed;bottom: 30px;right: 30px;" class="btn-floating tooltipped btn-large waves-effect waves-light red" data-position="top" data-delay="50" data-tooltip="Create Note"><i class="material-icons">add</i></a>
     </div>
 @endsection

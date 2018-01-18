@@ -3,47 +3,57 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <div class="panel panel-default">
-                    <a class="pull-right btn btn-danger" href="{{ url('/') }}"><i class="fa fa-times-circle" aria-hidden="true"></i></a>
-                    <div class="panel-heading">Create new note</div>
-                    <div class="panel-body">
-                        <form action="{{ url('create') }}" method="POST" class="form" role="form">
+            <div class="col s10 offset-s1">
+                <ul class="collection">
+                    <a class="pull-right btn-floating btn-small waves-effect waves-light red " href="{{ url('/') }}"><i class="material-icons">close</i></a>
+                    <div class="collection-item">Create new note</div>
+                    <div class="collection-item">
+                        <div class="row">
+                        <form action="{{ url('create') }}" class="col s12" method="POST" role="form">
+                            <div class="row ">
                             {{ csrf_field() }}
 
-                            <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
-                                <input type="text" class="form-control" name="title" value="{{ old('title') }}" placeholder="Give your note a title" required autofocus>
-
-                                @if ($errors->has('title'))
+                            <div class="input-field col s12 {{ $errors->has('title') ? ' has-error' : '' }}">
+                              <input placeholder="Give your note a Title" name="title" id="title" type="text" required autofocus value="{{ old('title') }}">
+                              <label for="title">Give your note a Title</label>
+                              @if ($errors->has('title'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('title') }}</strong>
                                     </span>
                                 @endif
                             </div>
-
-                            <div class="form-group{{ $errors->has('body') ? ' has-error' : '' }}">
-                                <textarea class="form-control" name="body" rows="15" placeholder="...and here goes your note body" required>{{ old('body') }}</textarea>
-
-                                @if ($errors->has('body'))
+                                <div class="input-field col s12 {{ $errors->has('body') ? ' has-error' : '' }}">
+                                  <textarea id="textarea1" name="body" class="materialize-textarea" required>{{ old('body') }}</textarea>
+                                  <label for="textarea1">...and here goes your Note Body</label>
+                                   @if ($errors->has('body'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('body') }}</strong>
                                     </span>
                                 @endif
-                            </div>
-                            <div class="col-md-9">
+                                </div>
+                             
+
+
+                            <div class="col s12">
                             @if (!$tags->isEmpty())
                                 {{-- expr --}}
                                 @foreach ($tags as $tag)
                                     {{-- expr --}}
-                                        <label class="checkbox-inline"> 
-                                            <input name="check_list[]" type="checkbox" value="{{ $tag->tagname }}"><code class="text-primary bg-info" >{{ $tag->tagname }}</code></label>
+                                       <p style="display: inline;margin-top: 5px"> 
+                                        <input type="checkbox" id="{{ $tag->tagname }}" class="filled-in" name="check_list[]"  value="{{ $tag->tagname }}" />
+                                         <label for="{{ $tag->tagname }}"><span style="padding: 5px" class="blue language-markup lighten-4 blue-text text-darken-4">{{ $tag->tagname }}</span></label>
+                                         &nbsp;&nbsp;
+                                         </p>
                                 @endforeach
+
                             @endif
                         </div>
                             <button class="btn btn-primary pull-right">Save</button>
+                             </div>
                         </form>
+                        </div>
                     </div>
-                </div>
+                </ul>
             </div>
         </div>
     </div>

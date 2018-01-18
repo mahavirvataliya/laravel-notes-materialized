@@ -10,7 +10,7 @@ Route::post('tags', 'TagController@store');
 Route::post('tagdelete', 'TagController@delete');
 Route::get('tagview/{id}', 'TagController@view');
 
-Route::get('about', 'NotesController@about');
+Route::get('about', 'about@about');
 
 Route::get('home', 'NotesController@index');
 

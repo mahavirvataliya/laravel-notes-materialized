@@ -1,23 +1,24 @@
 <template>
-    <div class="panel panel-default">
-        <div class="panel-heading">Edit note</div>
-        <div class="panel-body">
-            <div class="form-group">
-                <input type="text" class="form-control" v-model="title" @keydown="editingNote">
+
+        <div class="collection-item">
+            <div class="input-field col s12">
+                <input type="text" v-model="title" @keydown="editingNote">
+                <label for="title">Give your note a Title</label>
             </div>
 
-            <div class="form-group">
-                <textarea class="form-control" rows="15" v-model="body" @keydown="editingNote"></textarea>
+            <div class="input-field col s12">
+                <textarea class="materialize-textarea" v-model="body" @keydown="editingNote"></textarea>
+                <label for="body">...and here goes your Note Body</label>
             </div>
 
-            <button class="btn btn-primary pull-right" @click="updateNote">Save</button>
-
+            <button class="waves-effect waves-teal green btn pull-right" @click="updateNote"><i class="large material-icons right">save</i> save</button>
+            <div>
             <p>
-                Users editing this note:  <span class="badge">{{ usersEditing.length }}</span>
-                <span class="label label-success" v-text="status"></span>
+                Users editing this note:<span>{{ usersEditing.length }}</span>
+                <span style="padding:5px" class="waves-effect waves-light green black-text" v-text="status"></span>
             </p>
         </div>
-    </div>
+        </div>
 </template>
 
 <script>
