@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col s10 offset-s1">
                 <ul class="collection">
-                    <a class="pull-right btn-floating btn-small waves-effect waves-light red " href="{{ url('/') }}"><i class="material-icons">close</i></a>
+                    <a class="pull-right btn btn-small waves-effect waves-light red " href="{{ url('/') }}"><i class="material-icons">close</i></a>
                     <div class="collection-item">Create new note</div>
                     <div class="collection-item">
                         <div class="row">

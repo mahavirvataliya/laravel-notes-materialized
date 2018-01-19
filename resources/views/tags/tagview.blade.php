@@ -56,22 +56,22 @@
                                         <span class="card-title grey-text text-darken-4">{{ $note->title }} <i class="material-icons right">close</i></span>
                                         <p> 
 
-                                        <span class="col s2 "> 
-                                        <a class="waves-effect waves-teal btn-flat" href="{{ url('edit', [$note->slug]) }}">
+                                        <span class="col s3 "> 
+                                        <a href="{{ url('edit', [$note->slug]) }}">
                                         <i class="material-icons" >edit</i>
                                         &nbsp;</a></span>
-                                    <span class="col s2 ">
-                                       <a class="waves-effect waves-teal btn-flat" href="{{ url('delete', [$note->slug]) }}">
+                                    <span class="col s3">
+                                       <a href="{{ url('delete', [$note->slug]) }}">
                                         <i class="material-icons red-text" aria-hidden="true">delete</i>
                                        &nbsp; </a>
                                     </span>
-                                    <span class="col s2 ">
-                                         <a class="waves-effect waves-teal btn-flat" href="{{ url('view', [$note->slug]) }}">
+                                    <span class="col s3 ">
+                                         <a  href="{{ url('view', [$note->slug]) }}">
                                          <i class="material-icons" aria-hidden="true">visibility</i>
                                        &nbsp; </a>
                                     </span>
-                                    <span class="col s2 ">
-                                        <a class="waves-effect waves-teal btn-flat" href="{{ url('share', [$note->slug]) }}">
+                                    <span class="col s3 ">
+                                        <a  href="{{ url('share', [$note->slug]) }}">
                                              <i class="material-icons" a>share</i>
                                                 &nbsp;</a> 
                                         </span>

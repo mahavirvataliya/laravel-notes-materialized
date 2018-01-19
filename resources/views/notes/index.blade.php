@@ -58,24 +58,24 @@
                                         <span class="card-title grey-text text-darken-4">{{ $note->title }} <i class="material-icons right">close</i></span>
                                         <p> 
 
-                                        <span class="col s2 "> 
-                                        <a class="waves-effect waves-teal btn-flat" href="{{ url('edit', [$note->slug]) }}">
-                                        <i class="material-icons" >edit</i>
-                                        &nbsp;</a></span>
-                                    <span class="col s2 ">
-                                       <a class="waves-effect waves-teal btn-flat" href="{{ url('delete', [$note->slug]) }}">
-                                        <i class="material-icons red-text" aria-hidden="true">delete</i>
-                                       &nbsp; </a>
+                                        <span class="col s3 "> 
+                                        <a href="{{ url('edit', [$note->slug]) }}">
+                                        <i class="material-icons right" >edit</i>
+                                        </a></span>
+                                    <span class="col s3 ">
+                                       <a  href="{{ url('delete', [$note->slug]) }}">
+                                        <i class="material-icons red-text right" aria-hidden="true">delete</i>
+                                        </a>
                                     </span>
-                                    <span class="col s2 ">
-                                         <a class="waves-effect waves-teal btn-flat" href="{{ url('view', [$note->slug]) }}">
-                                         <i class="material-icons" aria-hidden="true">visibility</i>
-                                       &nbsp; </a>
+                                    <span class="col s3 ">
+                                         <a  href="{{ url('view', [$note->slug]) }}">
+                                         <i class="material-icons right" aria-hidden="true">visibility</i>
+                                       </a>
                                     </span>
-                                    <span class="col s2 ">
-                                        <a class="waves-effect waves-teal btn-flat" href="{{ url('share', [$note->slug]) }}">
-                                             <i class="material-icons" a>share</i>
-                                                &nbsp;</a> 
+                                    <span class="col s3 ">
+                                        <a href="{{ url('share', [$note->slug]) }}">
+                                             <i class="material-icons right">share</i>
+                                                </a> 
                                         </span>
                                     </p>
                                       </div>
@@ -110,8 +110,8 @@
                                         <span class="card-title grey-text text-darken-4">{{ $ssnote->title }} <i class="material-icons right">close</i></span>
                                         <p> 
 
-                                        <span class="col s2 "> 
-                                        <a class="waves-effect waves-teal btn-flat" href="
+                                        <span class="col s3 "> 
+                                        <a  href="
                                         @if ($snpm->owner || $snpm->edit_only)
                                             {{ url('edit', [$ssnote->slug]) }}
                                         @else
@@ -119,8 +119,8 @@
                                         @endif">
                                         <i class="material-icons" >edit</i>
                                         &nbsp;</a></span>
-                                    <span class="col s2 ">
-                                         <a class="waves-effect waves-teal btn-flat" href="
+                                    <span class="col s3 ">
+                                         <a href="
                                        @if ($snpm->owner || $snpm->edit_only)
                                        {{ url('delete', [$ssnote->slug]) }}
                                        @else
@@ -131,14 +131,14 @@
                                         </a>
                                        &nbsp; </a>
                                     </span>
-                                    <span class="col s2 ">
-                                         <a class="waves-effect waves-teal btn-flat" href="{{ url('view', [$ssnote->slug]) }}">
+                                    <span class="col s3 ">
+                                         <a href="{{ url('view', [$ssnote->slug]) }}">
                                          <i class="material-icons" aria-hidden="true">visibility</i>
                                        &nbsp;
                                         </a>
                                     </span>
-                                    <span class="col s2 ">
-                                        <a class="waves-effect waves-teal btn-flat" href="
+                                    <span class="col s3 ">
+                                        <a  href="
                                         @if ($snpm->owner || $snpm->share_only)
                                         {{url('share', [$ssnote->slug]) }}
                                         @else

@@ -13,6 +13,8 @@
             $( document ).ready(function(){
                 $(".button-collapse").sideNav();
                 $('.tooltipped').tooltip({delay: 50});
+                $('.dropdown-button').dropdown('open');
+                $('.dropdown-button').dropdown('close');
             });
         </script>
 
