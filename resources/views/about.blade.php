@@ -10,14 +10,15 @@
                         <h4>Created By Mahavir Vataliya</h4>
 
                         <div class="card" >
-                          <img width="25%" class="card-img-top " src="{{ URL::asset('/mahavirprofile.png') }}" alt="Card image">
+                          <img width="40%" class="card-img-top " src="{{ URL::asset('/mahavirprofile.png') }}" alt="Card image">
                           <div class="card-body">
                             <h4 class="card-title">Mahavir Vataliya</h4>
-                           <p class="card-text"><h4>Email <i class="fa fa-envelope"></i></h4>
+                           <p class="card-text"><h5>Email <i class="fa fa-envelope"></i></h5>
                     <a href="mailto:mahavir.vataliya110@gmail.com?body=From Share Note Application Feedback" type="button" class="email"> mahavir.vataliya110@gmail.com </a>
-                    <h4>Mobile Number <i class="fa fa-phone"></i></h4>
-                        +91 8140257443
-                </p>
+                    <h5>Mobile Number <i class="fa fa-phone"></i></h5>
+                       <h5> +91 8140257443 </h5>
+                       <h6><a href="http://notesbymrv.herokuapp.com">Old Site</a></h6>
+                    </p>
                           </div>
                         </div>
 
